@@ -1,21 +1,13 @@
-version: '3' 
-
-services: 
-
-  sql_server: 
-
-    image: mcr.microsoft.com/mssql/server:2022-latest 
-
+name: Microsoft SQL Server
+services:
+  sql_server:
+    container_name: Microsoft_SQL_Server
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    platform: linux/amd64
     environment: 
-
       - ACCEPT_EULA=Y 
-
       - SA_PASSWORD=Joakim1234 
-
     ports: 
-
       - "1433:1433" 
-
     volumes: 
-
       - ./data:/var/opt/mssql/data 
